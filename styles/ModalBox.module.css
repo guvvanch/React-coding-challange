@@ -1,0 +1,35 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px); /*blurs the background when modal is open*/
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+  color: white;
+}
+
+.modalPortrait {
+  background: transparent;
+  width: 250px;
+  border-radius: 15px;
+  padding: 15px;
+  outline: none;
+}
+
+.modalLandscape {
+  background: tranparent;
+  width: 500px;
+  border-radius: 15px;
+  padding: 15px;
+  outline: none;
+}
