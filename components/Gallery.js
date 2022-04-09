@@ -9,6 +9,7 @@ import styles from "../styles/Gallery.module.css";
 export default function Gallery({ photoList, getMorePhotos }) {
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState({});
+  const [page, setPage] = useState(1);
 
   //finds specific image on-click to show as modal
   function handleClick(id) {
@@ -21,7 +22,10 @@ export default function Gallery({ photoList, getMorePhotos }) {
     <InfiniteScroll
       className={styles.gallery}
       dataLength={photoList.length}
-      next={getMorePhotos}
+      next={() => {
+        setPage((prev) => prev + 1);
+        return getMorePhotos(page);
+      }}
       hasMore={true}
       loader={<h2>Loading...</h2>}
       endMessage={
