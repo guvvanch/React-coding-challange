@@ -6,7 +6,7 @@ import ModalBox from "./ModalBox";
 import { useState } from "react";
 import styles from "../styles/Gallery.module.css";
 
-export default function Gallery({ photoList, getMorePhotos, searchTerm }) {
+export default function Gallery({ photoList, getMorePhotos }) {
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState({});
 

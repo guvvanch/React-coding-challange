@@ -41,11 +41,7 @@ export default function Home({ photos }) {
     <div className={styles.container}>
       <div className={styles.header}>
         <Header />
-        <SearchBar
-          search={search}
-          searchTerm={searchTerm}
-          handleInput={handleInput}
-        />
+        <SearchBar search={search} handleInput={handleInput} />
       </div>
       <Gallery photoList={photoList} getMorePhotos={getMorePhotos} />
     </div>
