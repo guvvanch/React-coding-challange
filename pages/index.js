@@ -17,9 +17,11 @@ export const getServerSideProps = async () => {
 export default function Home({ photos }) {
   const [photoList, setPhotoList] = useState(photos);
   const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(1);
 
   //fetches more images upon scrolling
-  const getMorePhotos = async (page) => {
+  const getMorePhotos = async () => {
+    setPage((prev) => prev + 1);
     const newPhotos = await fetchPhotos(page, searchTerm);
     setPhotoList((prev) => [...prev, ...newPhotos]); //store all fetched images in photoList state
   };
@@ -30,6 +32,7 @@ export default function Home({ photos }) {
 
   const search = async (e) => {
     e.preventDefault();
+    setPage(1);
     let searchResult = await fetchPhotos(1, searchTerm);
     setPhotoList(searchResult);
   };
